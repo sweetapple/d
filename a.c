@@ -9,10 +9,10 @@
     {
     int array [N];
     init_array (array,N);
-    printf("original:\n");
+printf("original:\n");
     print_array (array,N);
-    getchar ();
-    printf("sorted:\n");
+getchar ();
+printf("sorted:\n");
     bubble_array (array ,N);
     print_array (array,N);
     return 0;
