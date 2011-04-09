@@ -1,22 +1,22 @@
 #include <stdio.h>
-
+#include <string.h>
+#define N  100
 int main(int argc, const char *argv[])
 {
-    char str[20]="This is a C world !";
+    char str[N]="This is a C world !";
     char *p=str;
-    char c_str[20];
-    printf("%s\n",str);
-    getchar();
-    char *p_c=c_str;
-    for (p=str;*p!='\0';p++)
+    char *s=str;
+    while (*s !='\0')
     {
-        if (*p!=' ')
+        while  (*s == ' ' )s++;
+        if (p !=s)
         {
-            *p_c=*p;
-            p_c++;
+            *p=*s;
         }
+        p++;
+        s++;
     }
-    *p_c='\0';
-    printf("%s\n",c_str);
+    *p='\0';
+    printf("len=%d\t%s\n",strlen(str),str );
     return 0;
 }
