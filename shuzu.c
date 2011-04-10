@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 #define N 10
-#define M 10
+#define M 5
 int main(int argc, const char *argv[])
 {
     int array[N][M];
@@ -51,9 +51,9 @@ int main(int argc, const char *argv[])
             }
         }
     }
-    for (i = 0; i < M; i++) 
+    for (i = 0; i < N; i++) 
     {
-        for (j=0;j<N;j++)
+        for (j=0;j<M;j++)
         {
             printf("%5d",array[i][j]);
         }
