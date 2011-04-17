@@ -7,9 +7,10 @@ struct node
     char name[20];
     int score;
 };
+typedef struct node V_NODE;
 int main(int argc, const char *argv[])
 {
-    struct node stu;
+    V_NODE stu;
     stu.number=2;
     stu.score=150;
     strcpy (stu.name,"pt");
