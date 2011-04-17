@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+#define P ptr->
 struct node
 {
     int number;
@@ -13,9 +13,9 @@ int main(int argc, const char *argv[])
     V_NODE stu;
     V_NODE *ptr=NULL;
     ptr=&stu;
-    ptr->number=2;
-    ptr->score=150;
+    P number=17;
+    P score=150;
     strcpy (ptr->name,"pt");
-    printf("number:%d\tscore:%d\tname:%s\n",ptr->number,ptr->score,ptr->name);
+    printf("number:%d\tscore:%d\tname:%s\n",P number,P score,ptr->name);
     return 0;
 }
