@@ -38,9 +38,9 @@ int main(int argc, const char *argv[])
 }
 int get_choice (void)
 {
-    int choice = 0;
-    scanf ("%d",&choice);
-    return choice;
+    char choice[20];
+    scanf ("%s",choice);
+    return atoi(choice);
 }
 void print_list (void)
 {
