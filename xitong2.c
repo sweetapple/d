@@ -21,7 +21,8 @@ void print_list (void);
 int main(int argc, const char *argv[])
 {
     V_NODE *head=NULL;
-    while (1)
+    char flag=0;
+    while (!flag)
     {
         print_list();
         switch (get_choice () )
@@ -29,7 +30,7 @@ int main(int argc, const char *argv[])
             case 1  : head=link_add(head);break;
             case 2  : head=delete_link (head) ;break;
             case 3  : print_link (head);break;
-            case 4  : break;
+            case 4  : flag=1 ;break;
             default : break;
         }
     }
