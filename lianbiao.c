@@ -24,6 +24,6 @@ int main(int argc, const char *argv[])
     getchar ();
     printf("score:\n");
     scanf ("%c",&P score);
-    printf("number:%d\tscore:%c\tname:%s\t\n",P number,P score,ptr->name);
+    printf("number:%d\tscore:%c     name:%s\t\n",P number,P score,ptr->name);
     return 0;
 }

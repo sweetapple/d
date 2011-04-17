@@ -15,6 +15,7 @@ void print_link(V_NODE *p);
 V_NODE *link_add(V_NODE *head);
 
 V_NODE *create_link (int n);
+V_NODE *delete_link (V_NODE *head);
 int main(int argc, const char *argv[])
 {
     V_NODE *head=NULL;
@@ -22,6 +23,7 @@ int main(int argc, const char *argv[])
     printf("input a number:\n");
     scanf("%d",&n);
     head = create_link(n);
+//    head = delete_link(head);
     print_link(head);
     link_add(head);
     print_link(head);
@@ -111,4 +113,39 @@ V_NODE *link_add(V_NODE *head)
     
     return head;
 
+}
+////////////////下面是删除模块////////////////
+V_NODE *delete_link (V_NODE *head)
+{
+    int num=0;
+    V_NODE *p=head;
+    V_NODE *ptr=NULL;
+    if (head==NULL)                   //
+    {                                 //判断原链表是否为空 
+        printf("empty link!\n");      //
+        return NULL;
+    }
+    printf("Please input number of node to delete:\n");
+    scanf ("%d",&num);
+    if (num==head->number) 
+    {
+        head=head->next;
+        free (p);                     //free释放空间
+        return head;
+    }
+    while ( (p->next!=NULL)&& (p->next->number!=num) )
+    {
+        p=p->next;
+    }
+    if (p->next==NULL)                //判断是否找到了最后的元素 
+    {
+        printf("No number match!\n");
+    }
+    else
+    {
+        ptr=p->next;
+        p->next=p->next->next;
+        free (ptr);
+    }
+    return head;
 }
