@@ -17,5 +17,12 @@ int main(int argc, const char *argv[])
     P score=150;
     strcpy (ptr->name,"pt");
     printf("number:%d\tscore:%d\tname:%s\n",P number,P score,ptr->name);
+    printf("please input a number:\n");
+    scanf ("%d",&P number);
+    printf("name:\n");
+    scanf ("%s",P name);
+    printf("score:\n");
+    scanf ("%d",&P score);
+    printf("number:%d\tscore:%d\tname:%s\n",P number,P score,ptr->name);
     return 0;
 }
