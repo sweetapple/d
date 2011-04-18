@@ -10,7 +10,12 @@ void print_array(int *p)
     {
         if (p[i]>0)
         {
+            j++;
             printf("%5d",p[i]);
+            if (j%10==0)
+            {
+                printf("\n");
+            }
         }
     }
     printf("\n");
@@ -21,7 +26,7 @@ void init_array(int *p)
     srand (time (NULL) );
     for (i = 0; i < N; i++) 
     {
-        p[i]= (rand ()%10 );
+        p[i]= (rand ()%20 );
     }
 }
 void sort_array(int *p)
@@ -32,7 +37,7 @@ void sort_array(int *p)
     {
         if (p[i]>0)
         {
-            for (j=j+1;j<N;j++)
+            for (j=i+1;j<N;j++)
             {
                 if (p[j]==p[i])
                 {
@@ -44,7 +49,7 @@ void sort_array(int *p)
 }
 int main (void)
 {
-    int array(N);
+    int array[N];
     init_array(array);
     printf("original:\n");
     print_array(array);
