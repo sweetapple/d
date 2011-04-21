@@ -21,6 +21,8 @@ int main(int argc, const char *argv[])
     }
         while(!feof (fp1))
         {
+        printf("%d",i);
+        printf("%d\n",n);
         n+=fread (&str[i],1,4,fp1);
         i+=4;
         }
