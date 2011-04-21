@@ -18,10 +18,66 @@ V_NODE *create_link (int n);
 V_NODE *delete_link (V_NODE *head);
 int get_choice (void);
 void print_list (void);
+void save_link (V_NODE *p)
+{   
+    FILE *fp;
+    fp=fopen ("text1","w+");
+    if (fp==NULL) 
+    {
+        perror ("fp");
+        exit (0);
+    }
+    while (p!=NULL)
+    {
+        fprintf (fp,"%d\t%s\n",p->number,p->name);
+        p=p->next;
+    }
+    fclose;
+}
+V_NODE *load_link (void)
+{
+    FILE *fp;
+    int num;
+    char na[20];
+    fp=fopen ("text1","a+");
+    if (fp==NULL) 
+    {
+        perror ("fp");
+        exit (0);
+    }
+    if (fscanf (fp,"%d%s",&num,na)!=EOF) 
+    {
+        p=malloc(sizeof (V_NODE));
+        if (p==NULL) 
+        {
+            perror ("malloc");
+            exit (0);
+        }
+        p->number=num;
+        strcpy (p->name,na);
+        p->next=NULL;
+        head=p;
+    }
+    while (fscanf (fp,"%d%s",&num,na)!=EOF)
+    {
+        p->next=malloc(sizeof (V_NODE));
+        if (p==NULL) 
+        {
+            perror ("malloc");
+            exit (0);
+        }
+        p->number=num;
+        strcpy (p->name->name,na);
+        p->next->next=NULL;
+        p=p->next;
+    }
+    return head;
+}
 int main(int argc, const char *argv[])
 {
     V_NODE *head=NULL;
     char flag=0;
+    V_NODE *load_link (void)
     while (!flag)
     {
         print_list();
@@ -30,7 +86,8 @@ int main(int argc, const char *argv[])
             case 1  : head=link_add(head);break;
             case 2  : head=delete_link (head) ;break;
             case 3  : print_link (head);break;
-            case 4  : flag=1 ;break;
+            case 4  : save_link (head);break;
+            case 5  : flag=1 ;break;
             default : break;
         }
     }
@@ -48,7 +105,8 @@ void print_list (void)
     printf("1 add node\n");
     printf("2 delete node\n");
     printf("3 print link\n");
-    printf("4 exit\n");
+    printf("4 save\n");
+    printf("5 exit\n");
 
 }
 V_NODE *create_link(int n)
