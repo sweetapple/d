@@ -61,13 +61,13 @@ V_NODE *load_link (void)
     while (fscanf (fp,"%d%s",&num,na)!=EOF)
     {
         p->next=malloc(sizeof (V_NODE));
-        if (p==NULL) 
+        if (p->next==NULL) 
         {
             perror ("malloc");
             exit (0);
-        }
-        p->number=num;
-        strcpy (p->name->name,na);
+            }
+        p->next->number=num;
+        strcpy (p->next->name,na);
         p->next->next=NULL;
         p=p->next;
     }
