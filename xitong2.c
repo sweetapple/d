@@ -39,6 +39,8 @@ V_NODE *load_link (void)
     FILE *fp;
     int num;
     char na[20];
+    V_NODE *head;
+    V_NODE *p;
     fp=fopen ("text1","a+");
     if (fp==NULL) 
     {
@@ -77,7 +79,7 @@ int main(int argc, const char *argv[])
 {
     V_NODE *head=NULL;
     char flag=0;
-    V_NODE *load_link (void)
+    head = load_link ();
     while (!flag)
     {
         print_list();
