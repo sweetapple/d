@@ -21,7 +21,7 @@ void print_list (void);
 void save_link (V_NODE *p)
 {   
     FILE *fp;
-    fp=fopen ("text1","w+");
+    fp=fopen ("text1","a+");
     if (fp==NULL) 
     {
         perror ("fp");
@@ -32,16 +32,16 @@ void save_link (V_NODE *p)
         fprintf (fp,"%d\t%s\n",p->number,p->name);
         p=p->next;
     }
-    fclose;
+    fclose  (fp);
 }
 V_NODE *load_link (void)
 {
     FILE *fp;
     int num;
     char na[20];
-    V_NODE *head;
-    V_NODE *p;
-    fp=fopen ("text1","a+");
+    V_NODE *head=NULL;
+    V_NODE *p=NULL;
+    fp=fopen ("text1","r+");    //新
     if (fp==NULL) 
     {
         perror ("fp");

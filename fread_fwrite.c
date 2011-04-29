@@ -7,13 +7,13 @@ int main(int argc, const char *argv[])
     FILE *fp2;
     int i=0;
     int n=0;
-    fp1=fopen  ("text1","r+");
+    fp1=fopen  ("text3","r+");
     if (fp1==NULL) 
     {
         perror ("fp1");
         exit (0);
     }
-    fp2=fopen  ("text2","a+");
+    fp2=fopen  ("text2","r+");
     if (fp2==NULL) 
     {
         perror ("fp2");
