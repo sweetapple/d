@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define N 100
-    void init_array (int p[],int n);
-    void bubble_array (int p[],int n);
-    void print_array (int p[],int n);
-    void quick_sort (int p[],int x,int y);
-    int main(int argc, const char *argv[])
-    {
+void init_array (int p[],int n);
+void bubble_array (int p[],int n);
+void print_array (int p[],int n);
+void quick_sort (int p[],int x,int y);
+int main(int argc, const char *argv[])
+{
     int array [N];
     init_array (array,N);
 printf("original:\n");
@@ -20,7 +20,7 @@ getchar();
     print_array (array,N);
 
     return 0;
-    }
+}
     void init_array (int p[],int n)
     {
     int i=0;
