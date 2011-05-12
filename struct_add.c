@@ -23,9 +23,10 @@ int main(int argc, const char *argv[])
     printf("input a number:\n");
     scanf("%d",&n);
     head = create_link(n);
-//    head = delete_link(head);
     print_link(head);
     link_add(head);
+    print_link(head);
+    head = delete_link(head);
     print_link(head);
     return 0;
 }
