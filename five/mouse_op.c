@@ -6,22 +6,23 @@
 extern fbscr_t fb_v;                                               //extern 声明要用fb_v
 static u32_t cursor_pixel[C_W*C_H]= 
 { 
-        BORD,T___,T___,T___,T___,T___,T___,T___,T___,T___, 
-        BORD,BORD,T___,T___,T___,T___,T___,T___,T___,T___, 
-        BORD,X___,BORD,T___,T___,T___,T___,T___,T___,T___, 
-        BORD,X___,X___,BORD,T___,T___,T___,T___,T___,T___, 
-        BORD,X___,X___,X___,BORD,T___,T___,T___,T___,T___, 
-        BORD,X___,X___,X___,X___,BORD,T___,T___,T___,T___, 
-        BORD,X___,X___,X___,X___,X___,BORD,T___,T___,T___, 
-        BORD,X___,X___,X___,X___,X___,X___,BORD,T___,T___, 
+        BORD,T___, 
+        BORD,BORD,T___, 
+        BORD,X___,BORD,T___, 
+        BORD,X___,X___,BORD,T___, 
+        BORD,X___,X___,X___,BORD,T___, 
+        BORD,X___,X___,X___,X___,BORD,T___, 
+        BORD,X___,X___,X___,X___,X___,BORD,T___, 
+        BORD,X___,X___,X___,X___,X___,X___,BORD,T___, 
         BORD,X___,X___,X___,X___,X___,X___,X___,BORD,T___, 
         BORD,X___,X___,X___,X___,X___,X___,X___,X___,BORD, 
         BORD,X___,X___,X___,X___,X___,BORD,BORD,BORD,BORD, 
-        BORD,X___,X___,BORD,X___,X___,BORD,T___,T___,T___, BORD,X___,BORD,T___,BORD,X___,X___,BORD,T___,T___, 
-        BORD,BORD,T___,T___,BORD,X___,X___,BORD,T___,T___, 
-        T___,T___,T___,T___,T___,BORD,X___,X___,BORD,T___, 
-        T___,T___,T___,T___,T___,BORD,X___,X___,BORD,T___, 
-        T___,T___,T___,T___,T___,T___,BORD,BORD,T___,T___ 
+        BORD,X___,X___,BORD,X___,X___,BORD,T___,T___,T___,
+        BORD,X___,BORD,T___,BORD,X___,X___,BORD,T___, 
+        BORD,BORD,T___,T___,BORD,X___,X___,BORD,T___, 
+        T___,T___,          T___,BORD,X___,X___,BORD,T___, 
+                            T___,BORD,X___,X___,BORD,T___, 
+                                 T___,BORD,BORD,T___ 
 };
 static u32_t bg_save[C_H*C_W]={0};
 int mx;
